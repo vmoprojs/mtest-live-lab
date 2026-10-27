@@ -4,7 +4,7 @@ channels:
   - nodefaults
 dependencies:
   - python=3.12.13
-  - pip=25.2
+  - pip=26.2.2
   - r-base=4.5.3
   - r-jsonlite=2.0.0
   - r-ggplot2=4.0.3
