@@ -1,0 +1,9 @@
+MTest_1.0.4.tar.gz is the unchanged source distribution from official CRAN:
+https://cloud.r-project.org/src/contrib/MTest_1.0.4.tar.gz
+Retrieved 2026-10-27. If archived later:
+https://cran.r-project.org/src/contrib/Archive/MTest/MTest_1.0.4.tar.gz
+SHA-256: e3deebf821b4fae0effe64bac2454821c12d5674d33e9e8c7fc9395b3fbe9128
+Authors: Víctor Morales-Oñate and Bolívar Morales-Oñate.
+License: GPL (>= 3). Complete unmodified source is in the archive.
+The archive includes only the official package and its distributed example data.
+No algorithm has been modified. R dependency licenses remain their authors'.

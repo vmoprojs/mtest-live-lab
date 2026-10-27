@@ -1,0 +1,12 @@
+.venv/
+.r-library/
+__pycache__/
+.pytest_cache/
+.DS_Store
+*.pyc
+.env*
+.streamlit/secrets.toml
+*.log
+evidence/
+review/
+*.zip
