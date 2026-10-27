@@ -7,10 +7,10 @@ textColor = "#193653"
 font = "sans serif"
 
 [server]
-address = "127.0.0.1"
+address = "0.0.0.0"
 headless = true
 maxUploadSize = 2
-fileWatcherType = "none"
+fileWatcherType = "auto"
 
 [browser]
 gatherUsageStats = false
