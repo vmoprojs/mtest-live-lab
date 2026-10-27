@@ -56,6 +56,8 @@ def cached_simulation(n, rho, noise, seed):
 
 def reset():
     st.session_state.clear()
+    # Explicit selector values also reset their browser-side state.
+    st.session_state.update(source="Simulador", scenario="Alta", rho=.95)
 
 
 def apply_scenario():

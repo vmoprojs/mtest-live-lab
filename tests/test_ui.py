@@ -29,6 +29,8 @@ def test_dashboard_both_engines_invalidation_reset():
     button(app, "Reiniciar demostración").click().run()
     assert not app.exception
     assert app.slider(key="rho").value == .95
+    assert app.selectbox(key="scenario").value == "Alta"
+    assert not any("widget" in item.value.lower() for item in app.warning)
     assert "result_R" not in app.session_state
 
 

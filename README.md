@@ -1,5 +1,7 @@
 # MTest Live Lab · R ↔ Python
 
+[**Abrir el laboratorio público**](https://mtest-live-lab.streamlit.app/)
+
 Demostración académica para el webinar **«Multicolinealidad: ¿sigue importando en la era del Machine Learning?»**, 27 de octubre de 2026, 19:00 Ecuador. Celebra el hito de 10K+ descargas de MTest en CRAN informado por sus autores; no es un contador en tiempo real.
 
 Ejecuta realmente **MTest 1.0.4 en R** y **mtest-py 0.1.4 en Python**. El motor R aparece primero. El laboratorio no modifica ni reimplementa los algoritmos oficiales.
