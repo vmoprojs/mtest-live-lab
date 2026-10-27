@@ -25,7 +25,16 @@ class EngineError(RuntimeError):
 
 
 def rscript_path():
-    path = os.environ.get("MTEST_RSCRIPT") or shutil.which("Rscript")
+    override = os.environ.get("MTEST_RSCRIPT")
+    if override:
+        return override
+    # Cloud can launch Python by absolute path without activating conda's PATH.
+    for prefix in (sys.prefix, os.environ.get("CONDA_PREFIX")):
+        if prefix:
+            candidate = Path(prefix)/"bin"/"Rscript"
+            if candidate.is_file() and os.access(candidate, os.X_OK):
+                return str(candidate)
+    path = shutil.which("Rscript")
     if not path:
         raise EngineError("Rscript no está disponible en el entorno.")
     return path
