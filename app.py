@@ -79,7 +79,7 @@ with st.sidebar:
     st.markdown("#### A · Datos compartidos")
     source = st.radio("Fuente", ["Simulador", "Cargar CSV"], horizontal=True, key="source")
     if source == "Simulador":
-        st.selectbox("Escenario", list(SCENARIOS), index=1, key="scenario", on_change=apply_scenario)
+        st.selectbox("Escenario", ["Alta", "Baja", "Casi perfecta"], key="scenario", on_change=apply_scenario)
         st.session_state.setdefault("rho", .95)
         rho = st.slider("Correlación poblacional ρ", -.999, .999, step=.001, key="rho", format="%.3f")
         n = st.slider("Observaciones", 50, 1000, 300, 50, key="n")
