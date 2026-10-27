@@ -45,3 +45,15 @@ def test_python_timeout_and_sanitized_failure(monkeypatch):
 def test_initializer_is_idempotent():
     assert prepare_runtime()['available']
     assert prepare_runtime()['available']
+
+
+def test_rscript_discovery_without_activated_path(tmp_path, monkeypatch):
+    import lab.engines as engines
+    binary = tmp_path/'bin'/'Rscript'
+    binary.parent.mkdir()
+    binary.write_text('#!/bin/sh\nexit 0\n')
+    binary.chmod(0o755)
+    monkeypatch.delenv('MTEST_RSCRIPT', raising=False)
+    monkeypatch.setenv('PATH', '')
+    monkeypatch.setattr(engines.sys, 'prefix', str(tmp_path))
+    assert engines.rscript_path() == str(binary)

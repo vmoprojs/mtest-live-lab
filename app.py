@@ -44,7 +44,7 @@ div[data-testid="stAlert"] p {font-size:16px;}
 
 
 @st.cache_resource(show_spinner="Preparando el motor R oficial…")
-def engine_status():
+def engine_status(runtime_revision):
     return prepare_runtime()
 
 
@@ -67,7 +67,7 @@ def chart(fig, key):
                     config={"displaylogo": False, "modeBarButtonsToRemove": ["lasso2d", "select2d"]})
 
 
-status = engine_status()
+status = engine_status("conda-rscript-v2")
 python_ok = version("mtest-py") == "0.1.4"
 with st.sidebar:
     st.markdown("### MTest Live Lab")
