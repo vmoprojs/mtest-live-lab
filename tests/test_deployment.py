@@ -57,3 +57,13 @@ def test_rscript_discovery_without_activated_path(tmp_path, monkeypatch):
     monkeypatch.setenv('PATH', '')
     monkeypatch.setattr(engines.sys, 'prefix', str(tmp_path))
     assert engines.rscript_path() == str(binary)
+
+
+def test_public_server_configuration():
+    import tomllib
+    config = tomllib.loads((ROOT/'.streamlit/config.toml').read_text())
+    assert config['server']['address'] == '0.0.0.0'
+    assert config['server']['fileWatcherType'] == 'auto'
+    assert config['server']['maxUploadSize'] == 2
+    assert config['server'].get('enableXsrfProtection', True)
+    assert config['server'].get('enableCORS', True)
