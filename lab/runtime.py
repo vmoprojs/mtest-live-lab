@@ -28,8 +28,12 @@ def prepare_runtime():
             if proc.returncode:
                 return {"available": False, "error": "No se pudo preparar MTest 1.0.4; verifique las dependencias del entorno."}
             return r_probe()
-        except (EngineError, OSError, subprocess.TimeoutExpired):
-            return {"available": False, "error": "R no está instalado o la preparación excedió 120 s."}
+        except EngineError:
+            return {"available": False, "error": "Rscript no está disponible en el entorno activo."}
+        except OSError:
+            return {"available": False, "error": "El servidor no pudo iniciar el proceso R."}
+        except subprocess.TimeoutExpired:
+            return {"available": False, "error": "La preparación de MTest excedió 120 s."}
 
 
 @contextmanager

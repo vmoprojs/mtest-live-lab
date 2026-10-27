@@ -29,7 +29,8 @@ def rscript_path():
     if override:
         return override
     # Cloud can launch Python by absolute path without activating conda's PATH.
-    for prefix in (sys.prefix, os.environ.get("CONDA_PREFIX")):
+    for prefix in (sys.prefix, sys.base_prefix, os.environ.get("CONDA_PREFIX"),
+                   os.environ.get("MAMBA_ROOT_PREFIX"), Path.home()/".conda"):
         if prefix:
             candidate = Path(prefix)/"bin"/"Rscript"
             if candidate.is_file() and os.access(candidate, os.X_OK):

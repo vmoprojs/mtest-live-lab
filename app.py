@@ -67,7 +67,7 @@ def chart(fig, key):
                     config={"displaylogo": False, "modeBarButtonsToRemove": ["lasso2d", "select2d"]})
 
 
-status = engine_status("conda-rscript-v2")
+status = engine_status("conda-rscript-v3")
 python_ok = version("mtest-py") == "0.1.4"
 with st.sidebar:
     st.markdown("### MTest Live Lab")
