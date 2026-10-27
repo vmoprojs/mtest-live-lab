@@ -6,7 +6,7 @@ Ejecuta realmente **MTest 1.0.4 en R** y **mtest-py 0.1.4 en Python**. El motor 
 
 ## Instalación reproducible
 
-Se recomienda Linux x86-64, Python 3.12.13 y R 4.5.3. Un único `environment.yml` fija las dependencias directas de Python y R desde conda-forge y PyPI. Las dependencias transitivas pueden actualizarse al resolver nuevamente el entorno.
+Se recomienda Linux x86-64, Python 3.12.13 y R 4.5.3. Un único `environment.yml` fija las dependencias directas de Python y R desde conda-forge y PyPI. Las dependencias transitivas pueden actualizarse al resolver nuevamente el entorno. `locks/` conserva el inventario exacto conda y pip del entorno Linux probado, para reconstrucción independiente y auditoría.
 
 ```sh
 git clone https://github.com/vmoprojs/mtest-live-lab.git
